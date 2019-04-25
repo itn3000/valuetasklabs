@@ -83,6 +83,7 @@ namespace valuetasklabs
             }
             var vts = _Pool.Get();
             vts.SetPool(_Pool);
+            vts.Reset();
             if (!_Channel.Writer.TryWrite(vts))
             {
                 throw new Exception("failed to write to channel");
