@@ -13,7 +13,7 @@ namespace valuetasklabs.benchmark
     {
         [Params(100000)]
         public int LoopNum;
-        [Params(1, 10, 100)]
+        [Params(1, 10)]
         public int TaskNum;
         [Benchmark]
         public void ValueTaskBench()

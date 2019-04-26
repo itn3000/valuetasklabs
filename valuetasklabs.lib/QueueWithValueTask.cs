@@ -54,7 +54,7 @@ namespace valuetasklabs
             _Channel = Channel.CreateUnbounded<ManualResetValueTaskSource<int>>();
             _Worker = Task.Run(async () => await Worker().ConfigureAwait(false));
         }
-        async Task Worker()
+        async ValueTask Worker()
         {
             try
             {

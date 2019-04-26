@@ -12,6 +12,7 @@ namespace valuetasklabs
         CancellationTokenSource _Cts = new CancellationTokenSource();
         public QueueWithTcs()
         {
+            ThreadPool.UnsafeQueueUserWorkItem((obj) => Console.WriteLine(), new object());
             _Channel = Channel.CreateUnbounded<TaskCompletionSource<int>>();
             _Worker = Task.Run(async () => await Worker().ConfigureAwait(false));
         }
